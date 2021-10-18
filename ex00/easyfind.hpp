@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:09:18 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 09:34:42 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/10/18 11:45:43 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 // T is a container of int
 // Find the the first occurrence of the second parameter in the first parameter
-template< typename T>
+template< typename T >
 int easyfind(T const& t, int n)
 {
 	typename T::const_iterator end = t.end();

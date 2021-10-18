@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:36:37 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 10:57:29 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/10/18 11:56:33 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define SPAN_HPP
 
 # include <iostream>
-# include <algorithm>
+# include <algorithm> 
 # include <vector>
 # include <iterator>
-# include <cmath>
+# include <cmath> //for abs
 
 class Span
 {
@@ -28,9 +28,13 @@ class Span
 		Span(Span const & ref);
 		Span const & operator=(Span const & ref);
 
+		// A better constructor
+		Span(int first, int last, int jump);
+
 		// Getters
 		unsigned int		getNInts( void );
 		std::vector<int>	getVector( void );
+		unsigned int		getNContents(void);
 
 		// Required functions
 		void	addNumber( int n );
@@ -40,6 +44,7 @@ class Span
 
 	private:
 		unsigned int		_n_ints;
+		unsigned int		_n_contents;
 		std::vector<int>	_vector;
 };
 #endif
