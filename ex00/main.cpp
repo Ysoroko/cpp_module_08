@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:09:06 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/17 17:36:43 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/10/18 09:33:50 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ void	ft_array_tests(void)
 	std::cout << "----------------------------------------------" << std::endl;
 }
 
+// 3 different containers used : list / vector / array
 int main(void)
 {
 	ft_list_tests();

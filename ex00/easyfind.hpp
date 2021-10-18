@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:09:18 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/17 17:38:33 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/10/18 09:34:42 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@
 template< typename T>
 int easyfind(T const& t, int n)
 {
-	// find returns the iterator to the element found or the last element's iterator
-	return (std::find(t.begin(), t.end(), n) != t.end() ?
-			*(std::find(t.begin(), t.end(), n)) : 
-			throw(std::out_of_range("Element not found in given range")));
+	typename T::const_iterator end = t.end();
+
+	// STL algorithm "find" returns the iterator to the element found if it finds it
+	// otherwise it will return the t.end() pointer (a pointer to the element after last)
+	typename T::const_iterator it = std::find(t.begin(), end, n);
+
+	return (it == end ? throw(std::out_of_range("Element not found in given range")) : *it);
 }
 
 
