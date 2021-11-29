@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 16:09:06 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 09:33:50 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 13:44:33 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_display_header(std::string name)
 {
 	std::cout << name << std::endl;
-	std::cout << "----------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 void	ft_displayInt(int i)
@@ -40,9 +40,9 @@ void	ft_list_tests(void)
 	std::cout << std::endl;
 
 	// Use easyfind
-	ft_display_header("EXISTING ELEMENT");
+	ft_display_header("LOOKING FOR AN EXISTING ELEMENT: [2]");
 	std::cout << easyfind(lst, 2) << std::endl << std::endl; // will return the iterator to "2"
-	ft_display_header("NOT EXISTING ELEMENT");
+	ft_display_header("LOOKING FOR A NOT EXISTING ELEMENT: [-28]");
 	try
 	{
 		std::cout << easyfind(lst, -28) << std::endl << std::endl; // will return the iterator to "3" (the last element)
@@ -51,7 +51,7 @@ void	ft_list_tests(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "----------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 // Vector = dynamic array, its size can change
@@ -71,9 +71,9 @@ void	ft_vector_tests(void)
 	std::cout << std::endl;
 
 	// Use easyfind
-	ft_display_header("EXISTING ELEMENT");
+	ft_display_header("LOOKING FOR AN EXISTING ELEMENT: [2]");
 	std::cout << easyfind(vector, 2) << std::endl << std::endl; // will return the iterator to "2"
-	ft_display_header("NOT EXISTING ELEMENT");
+	ft_display_header("LOOKING FOR A NOT EXISTING ELEMENT: [-28]");
 	try
 	{
 		std::cout << easyfind(vector, -28) << std::endl << std::endl; // will return the iterator to "3" (the last element)
@@ -82,7 +82,7 @@ void	ft_vector_tests(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "----------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 // Array = good old fixed size array from C
@@ -100,9 +100,9 @@ void	ft_array_tests(void)
 	std::cout << std::endl;
 
 	// Use easyfind
-	ft_display_header("EXISTING ELEMENT");
+	ft_display_header("LOOKING FOR AN EXISTING ELEMENT: [2]");
 	std::cout << easyfind(array, 2) << std::endl << std::endl; // will return the iterator to "2"
-	ft_display_header("NOT EXISTING ELEMENT");
+	ft_display_header("LOOKING FOR A NOT EXISTING ELEMENT: [-28]");
 	try
 	{
 		std::cout << easyfind(array, -28) << std::endl << std::endl; // will return the iterator to "3" (the last element)
@@ -111,7 +111,7 @@ void	ft_array_tests(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << "----------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 // 3 different containers used : list / vector / array
