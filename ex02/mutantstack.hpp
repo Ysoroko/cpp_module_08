@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:59:38 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 15:14:58 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 14:55:58 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class MutantStack : public std::stack<T>
 			while (n--)
 				this->push(v[n]);
 			return (ret);
-		} //5 3 5 737 0
+		}
 
 		iterator end() { return (&this->top() + 1); }
 };
