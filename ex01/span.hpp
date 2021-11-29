@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:36:37 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/11/29 13:56:47 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 14:43:33 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <vector>
 # include <iterator>
 # include <cmath> //for abs
+
+typedef std::vector<int>::iterator my_iter;
 
 class Span
 {
@@ -40,6 +42,9 @@ class Span
 		void	addNumber( int n );
 		int		longestSpan( void );
 		int		shortestSpan( void );
+
+		// A better addNumber
+		void	addNumber(my_iter start, my_iter end);
 		
 
 	private:

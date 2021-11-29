@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:37:10 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/11/29 13:57:48 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 14:48:26 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ Span::Span(int first, int last, int jump)
 	for (int i = f; i < l; i += jump)
 		_vector.push_back(i);
 	_n_contents = _n_ints;
-	ft_msg("Span has been constructed with range");
+	//ft_msg("Span has been constructed with range");
 }
 
 // ----------------------------------- Getters ---------------------------------
@@ -96,12 +96,21 @@ void Span::addNumber(int n)
 	_n_contents++;
 }
 
+void	Span::addNumber(my_iter start, my_iter end)
+{
+	// Avoid the infinite loop
+	if (end < start)
+		return ;
+	for (my_iter i = start; i != end; i++)
+		addNumber(*i);
+}
+
 // Returns the longest span
 // Using min/max_element from STL
 int Span::longestSpan(void)
 {
 	if (_n_contents == 0 || _n_contents == 1)
-		return (0);
+		throw(std::out_of_range("Not enough elements for a span"));
 	std::vector<int>::iterator min = std::min_element(_vector.begin(), _vector.end());
 	std::vector<int>::iterator max = std::max_element(_vector.begin(), _vector.end());
 	int longuest_span = *max - *min;
@@ -113,7 +122,7 @@ int Span::longestSpan(void)
 int Span::shortestSpan(void)
 {
 	if (_n_contents == 0 || _n_contents == 1)
-		return (0);
+		throw(std::out_of_range("Not enough elements for a span"));
 	std::vector<int>::iterator max = std::max_element(_vector.begin(), _vector.end());
 	int shortest_span = *max;
 
