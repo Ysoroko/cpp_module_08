@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:36:37 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 11:56:33 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 13:56:47 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ class Span
 		Span(int first, int last, int jump);
 
 		// Getters
-		unsigned int		getNInts( void );
-		std::vector<int>	getVector( void );
-		unsigned int		getNContents(void);
+		unsigned int		getNInts( void ) const;
+		std::vector<int>	getVector( void ) const;
+		unsigned int		getNContents(void) const;
 
 		// Required functions
 		void	addNumber( int n );
@@ -47,4 +47,7 @@ class Span
 		unsigned int		_n_contents;
 		std::vector<int>	_vector;
 };
+
+std::ostream & operator<<( std::ostream & o, Span const & rhs);
+
 #endif

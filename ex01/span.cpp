@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:37:10 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 11:57:27 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 13:57:48 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Span::Span(unsigned int n_ints) : _n_ints(n_ints)
 {
 	_vector.reserve(n_ints);
 	_n_contents = 0;
-	ft_msg("Span has been constructed");
+	//ft_msg("Span has been constructed");
 }
 
 Span::~Span()
 {
-	ft_msg("Span has been destroyed");
+	//ft_msg("Span has been destroyed");
 }
 
 Span::Span(Span const &ref) : _n_ints(ref._n_ints), _vector(ref._vector)
@@ -70,17 +70,17 @@ Span::Span(int first, int last, int jump)
 
 // ----------------------------------- Getters ---------------------------------
 
-unsigned int Span::getNInts(void)
+unsigned int Span::getNInts(void) const
 {
 	return (_n_ints);
 }
 
-unsigned int Span::getNContents(void)
+unsigned int Span::getNContents(void) const
 {
 	return (_n_contents);
 }
 
-std::vector<int> Span::getVector(void)
+std::vector<int> Span::getVector(void) const
 {
 	return (_vector);
 }
@@ -93,6 +93,7 @@ void Span::addNumber(int n)
 	if (_vector.size() >= _n_ints || _n_contents >= _n_ints)
 		throw(std::out_of_range("Cannot add any more elements"));
 	_vector.push_back(n);
+	_n_contents++;
 }
 
 // Returns the longest span
@@ -124,4 +125,14 @@ int Span::shortestSpan(void)
 			shortest_span = std::abs(v[i] - v[i - 1]);
 	}
 	return (shortest_span);
+}
+
+// << operator overload (not a member function!)
+std::ostream & operator<<( std::ostream & o, Span const & rhs)
+{
+	std::cout << "Span contents: ";
+	for (unsigned int i = 0; i < rhs.getNContents(); i++)
+		std::cout << (rhs.getVector())[i] << " ";
+	std::cout << std::endl;
+	return (o);
 }

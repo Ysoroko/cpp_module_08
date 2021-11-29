@@ -6,7 +6,7 @@
 /*   By: ysoroko <ysoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 09:36:17 by ysoroko           #+#    #+#             */
-/*   Updated: 2021/10/18 11:58:47 by ysoroko          ###   ########.fr       */
+/*   Updated: 2021/11/29 13:56:05 by ysoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ int main(void)
 {
 	// Subject main
 	Span	sp = Span(5);
+
 	sp.addNumber(5);
 	sp.addNumber(3);
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
+	
+	std::cout << sp;
 	std::cout << sp.shortestSpan() << std::endl; // 5 - 3 or 11 - 9 = 2
 	std::cout << sp.longestSpan() << std::endl; // 17 - 3 = 14
 	std::cout << "--------------------------" << std::endl;
