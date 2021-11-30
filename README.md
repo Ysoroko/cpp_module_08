@@ -5,6 +5,7 @@ Introduction to C++
 
 - Algorithms
 - Containers
+- Iterators
 
 
 ### Other C++ modules:
